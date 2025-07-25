@@ -13,7 +13,6 @@ const PopUp = ({ isOpen, amount }) => {
     if (!url) return;
 
     const timeout = setTimeout(() => {
-      alert("App not detected. Please open the app manually.");
     }, 2500);
 
     window.addEventListener("blur", () => clearTimeout(timeout), {
