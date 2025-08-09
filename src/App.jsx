@@ -16,13 +16,6 @@ const App = () => {
     const currentPath = window.location.pathname;
     const expectedPath = '/2025/scratch';
     
-    // Base URL (domain root) - redirect to Google
-    if (currentPath === '/' || currentPath === '') {
-      console.log('Base URL detected, redirecting to Google...');
-      window.location.href = 'https://www.google.com';
-      return;
-    }
-    
     // Exact correct URL - show content
     if (currentPath === expectedPath || currentPath === expectedPath + '/') {
       console.log('Correct URL detected, showing content...');
