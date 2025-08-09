@@ -1,4 +1,6 @@
 import React from "react";
+import phonepe from "../assets/phonepe.png";
+import paytm from "../assets/paytm.png";
 
 const PopUp = ({ isOpen, amount }) => {
   if (!isOpen) return null;
@@ -35,10 +37,10 @@ const PopUp = ({ isOpen, amount }) => {
         </h2>
         <div className="flex justify-center gap-20 mt-4">
           <button onClick={() => handleSelect("phonepe")}>
-            <img src="/phonepe.png" alt="PhonePe" className="h-10" />
+            <img src={phonepe} alt="PhonePe" className="h-10" />
           </button>
           <button onClick={() => handleSelect("paytm")}>
-            <img src="/paytm.png" alt="Paytm" className="h-5" />
+            <img src={paytm} alt="Paytm" className="h-5" />
           </button>
         </div>
       </div>

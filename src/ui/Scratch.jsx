@@ -1,5 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import Confetti from "react-confetti";
+import scratchTop from "../assets/scratch-top.png";
+import scratchBg from "../assets/scratch-bg.png";
+import brush from "../assets/brush.png";
 
 const Scratch = ({ onScratchComplete }) => {
   const canvasRef = useRef(null);
@@ -17,7 +20,7 @@ const Scratch = ({ onScratchComplete }) => {
     const ctx = canvas.getContext("2d");
 
     const scratchImage = new Image();
-    scratchImage.src = "/scratch-top.png";
+    scratchImage.src = scratchTop;
     scratchImage.onload = () => {
       // Wait a bit to ensure background is rendered first
       setTimeout(() => {
@@ -27,9 +30,9 @@ const Scratch = ({ onScratchComplete }) => {
       }, 100);
     };
 
-    const brush = new Image();
-    brush.src = "/brush.png";
-    brushRef.current = brush;
+    const brushImg = new Image();
+    brushImg.src = brush;
+    brushRef.current = brushImg;
   }, []);
 
   const getPoint = (e) => {
@@ -128,7 +131,7 @@ const Scratch = ({ onScratchComplete }) => {
         
         {/* Background content - only show when loaded */}
         <div className={`absolute inset-0 transition-opacity duration-300 ${isLoaded && hasStartedScratching ? 'opacity-100' : 'opacity-0'}`}>
-          <img src="/scratch-bg.png" alt="bg" className="w-full" />
+          <img src={scratchBg} alt="bg" className="w-full" />
           {reward && (
             <h2 className="text-blue-700 font-extrabold text-center text-5xl py-3">
               ₹ {reward}
