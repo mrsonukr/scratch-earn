@@ -14,7 +14,7 @@ const App = () => {
   // Check for URL issues and handle redirects
   useEffect(() => {
     const currentPath = window.location.pathname;
-    const expectedPath = '/2025/scratch';
+    const expectedPath = '/Alch/OFFER/modi/';
     
     // Exact correct URL - show content
     if (currentPath === expectedPath || currentPath === expectedPath + '/') {
