@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Scratch from "./ui/Scratch";
 import PopUp from "./ui/PopUp";
 import topRaksha from "./assets/top-raksha.png";
-import bottomRaksha from "./assets/bottom-raksha.png";
+import bottomRaksha from "./assets/bottom-raksha.gif";
 
 const App = () => {
   const [isScratchCleared, setIsScratchCleared] = useState(false);
