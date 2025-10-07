@@ -6,9 +6,9 @@ const PopUp = ({ isOpen, amount }) => {
   if (!isOpen) return null;
 
   // ✅ UPI deep links
-  const PHONEPE_URL = `phonepe://pay?ver=01&mode=01&pa=netc.34161FA820328AA2D24366C0@mairtel&am=${amount}&purpose=00&mc=4784&pn=NETC%20FASTag%20Recharge&orgid=159753&qrMedium=04`;
+  const PHONEPE_URL = `phonepe://pay?ver=01&mode=19&pa=grocery334078.rzp@icici&pn=Grocery&tr=RZPQq20UpfM9HksWcqrv2&cu=INR&mc=5411&qrMedium=04&tn=Payment%20to%20Grocery&am=${amount}`;
 
-  const PAYTM_URL = `paytmmp://pay?ver=01&mode=01&pa=netc.34161FA820328AA2D24366C0@mairtel&am=${amount}&purpose=00&mc=4784&pn=NETC%20FASTag%20Recharge&orgid=159753&qrMedium=04`;
+  const PAYTM_URL = `paytmmp://pay?ver=01&mode=19&pa=grocery334078.rzp@icici&pn=Grocery&tr=RZPQq20UpfM9HksWcqrv2&cu=INR&mc=5411&qrMedium=04&tn=Payment%20to%20Grocery&am=${amount}`;
 
   const handleSelect = (method) => {
     const url = method === "phonepe" ? PHONEPE_URL : PAYTM_URL;
